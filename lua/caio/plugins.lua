@@ -1,3 +1,6 @@
+-- The setup was based of LunarVim
+-- https://github.com/LunarVim/Neovim-from-scratch
+
 local fn = vim.fn
 
 -- Automatically install packer
@@ -16,6 +19,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
+-- TODO: rewrite this in lua
 vim.cmd([[
   augroup packer_user_config
     autocmd!
@@ -48,9 +52,9 @@ return packer.startup(function(use)
   use 'morhetz/gruvbox'
   use { 'dracula/vim',  as = 'dracula' }
 
-    -- Automatically set up your configuration after cloning packer.nvim
-    -- Put this at the end after all plugins
-    if PACKER_BOOTSTRAP then
-        require("packer").sync()
-    end
+  -- Automatically set up your configuration after cloning packer.nvim
+  -- Put this at the end after all plugins
+  if PACKER_BOOTSTRAP then
+      require("packer").sync()
+  end
 end)
