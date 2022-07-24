@@ -4,4 +4,3 @@ require "caio.plugins"
 require "caio.lualine"
 require "caio.colorscheme"
 require "caio.autocommands"
--- asdf
