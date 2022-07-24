@@ -1,13 +1,21 @@
-vim.cmd [[
-  if exists("&termguicolors") && exists("&winblend")
-      syntax enable
-      set termguicolors
-      set winblend=0
-      set wildoptions=pum
-      set pumblend=5
-      set background=dark
-      colorscheme gruvbox
-      highlight Normal guibg=None
-      highlight NonText guibg=None
-  endif
-]]
+local colorscheme = "gruvbox"
+
+vim.opt.termguicolors = true -- TODO: find a way to check if exists
+vim.opt.background = "dark"
+
+-- Check if colorscheme exists
+local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
+
+if not status_ok then
+  vim.cmd([[colorscheme default]])
+  return
+end
+
+-- Remove background to allow transparency
+local highlight_groups = { "Normal", "SignColumn", "CursorLineNR" }
+
+for _, group in pairs(highlight_groups) do
+  vim.api.nvim_set_hl(0, group, {
+    bg = "none"
+  })
+end
