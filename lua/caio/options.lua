@@ -17,7 +17,7 @@ local options = {
   smartcase = true,
   swapfile = false,
   backup = false,
-  undodir = "/home/caio/.vim/undodir",
+  undodir = os.getenv("HOME") .. "/.vim/undodir",
   undofile = true,
   incsearch = true,
   scrolloff = 10,
@@ -25,6 +25,11 @@ local options = {
   cursorline = true,
   mouse = "a",
   showmode = false,
+  clipboard = "unnamedplus",
+  splitbelow = true,
+  splitright = true,
+  signcolumn = "yes",
+  -- updatetime = 300,
 }
 
 for option, value in pairs(options) do
