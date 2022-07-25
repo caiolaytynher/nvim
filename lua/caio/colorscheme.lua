@@ -11,6 +11,9 @@ if not status_ok then
   return
 end
 
+local bg_transparency = true
+if not bg_transparency then return end
+
 -- Remove background to allow transparency
 local highlight_groups = { "Normal", "SignColumn", "CursorLineNR" }
 
