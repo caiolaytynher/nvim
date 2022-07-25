@@ -46,7 +46,20 @@ return packer.startup(function(use)
 
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/plenary.nvim" -- Useful lua functions used by lots of plugins
-  use "hoob3rt/lualine.nvim" -- Custom line
+  use "hoob3rt/lualine.nvim"
+
+  -- Completions
+  use "hrsh7th/nvim-cmp"
+	use "hrsh7th/cmp-buffer"
+	use "hrsh7th/cmp-path"
+	use "hrsh7th/cmp-nvim-lsp"
+	use "hrsh7th/cmp-nvim-lua"
+	use "saadparwaiz1/cmp_luasnip"
+  use "L3MON4D3/LuaSnip"
+
+  -- LSP
+  use "neovim/nvim-lspconfig"
+  use "williamboman/nvim-lsp-installer"
 
   -- Color schemes
   use 'morhetz/gruvbox'
