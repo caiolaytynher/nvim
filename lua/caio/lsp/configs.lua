@@ -3,7 +3,7 @@ if not status_ok then return end
 
 local lspconfig = require("lspconfig")
 
-local servers = { "sumneko_lua" }
+local servers = { "sumneko_lua", "pyright" }
 
 lsp_installer.setup({
   ensure_installed = servers,
