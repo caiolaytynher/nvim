@@ -42,7 +42,6 @@ packer.init({
   },
 })
 
--- Install your plugins here
 return packer.startup(function(use)
 
   use "wbthomason/packer.nvim" -- Have packer manage itself
@@ -53,9 +52,8 @@ return packer.startup(function(use)
   use { 'dracula/vim',  as = 'dracula' }
 
   -- Automatically set up your configuration after cloning packer.nvim
-  -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
       require("packer").sync()
   end
-  
+
 end)
