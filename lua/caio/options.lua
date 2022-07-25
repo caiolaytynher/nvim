@@ -21,6 +21,7 @@ local options = {
   undofile = true,
   incsearch = true,
   scrolloff = 10,
+  sidescrolloff = 8,
   signcolumn = "no",
   cursorline = true,
   mouse = "a",
