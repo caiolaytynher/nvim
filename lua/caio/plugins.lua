@@ -47,6 +47,7 @@ return packer.startup(function(use)
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/plenary.nvim" -- Useful lua functions used by lots of plugins
   use "hoob3rt/lualine.nvim"
+  use "nvim-telescope/telescope.nvim"
 
   -- Completions
   use "hrsh7th/nvim-cmp"
@@ -60,6 +61,9 @@ return packer.startup(function(use)
   -- LSP
   use "neovim/nvim-lspconfig"
   use "williamboman/nvim-lsp-installer"
+
+  -- Treesitter
+  use "nvim-treesitter/nvim-treesitter"
 
   -- Color schemes
   use 'morhetz/gruvbox'
