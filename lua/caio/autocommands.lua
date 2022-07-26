@@ -8,9 +8,9 @@ autocmd("FileType", {
   group = file_specific_group,
   pattern = "python",
   callback = function()
-    vim.opt.shiftwidth = 4
-    vim.opt.tabstop = 4
-    vim.opt.softtabstop = 4
+    vim.opt_local.shiftwidth = 4
+    vim.opt_local.tabstop = 4
+    vim.opt_local.softtabstop = 4
   end,
 })
 
@@ -18,7 +18,7 @@ autocmd("FileType", {
   group = file_specific_group,
   pattern = { "tex", "markdown" },
   callback = function()
-    vim.opt.tw = 67
+    vim.opt_local.tw = 67
   end,
 })
 
