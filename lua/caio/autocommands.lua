@@ -1,8 +1,8 @@
 local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
 
-local file_specific_group = augroup("FileSpecific", {})
-local custom_fn_group = augroup("CustomFn", {})
+local file_specific_group = augroup("FileSpecific", { clear = true })
+local custom_fn_group = augroup("CustomFn", { clear = true })
 
 autocmd("FileType", {
   group = file_specific_group,
