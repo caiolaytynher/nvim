@@ -48,6 +48,11 @@ return packer.startup(function(use)
   use "nvim-lua/plenary.nvim" -- Useful lua functions used by lots of plugins
   use "hoob3rt/lualine.nvim"
   use "nvim-telescope/telescope.nvim"
+  use "windwp/nvim-autopairs"
+  use "numToStr/Comment.nvim"
+  use "lewis6991/gitsigns.nvim"
+  use "kyazdani42/nvim-web-devicons"
+  use "kyazdani42/nvim-tree.lua"
 
   -- Completions
   use "hrsh7th/nvim-cmp"
@@ -61,17 +66,18 @@ return packer.startup(function(use)
   -- LSP
   use "neovim/nvim-lspconfig"
   use "williamboman/nvim-lsp-installer"
+  use { "jose-elias-alvarez/null-ls.nvim", commit = "ff40739e5be6581899b43385997e39eecdbf9465" }
 
   -- Treesitter
   use "nvim-treesitter/nvim-treesitter"
 
   -- Color schemes
   use 'morhetz/gruvbox'
-  use { 'dracula/vim',  as = 'dracula' }
+  use { 'dracula/vim', as = 'dracula' }
 
   -- Automatically set up your configuration after cloning packer.nvim
   if PACKER_BOOTSTRAP then
-      require("packer").sync()
+    require("packer").sync()
   end
 
 end)
