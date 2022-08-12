@@ -6,7 +6,7 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-keymap("n", "<leader>e", ":Lex 30<CR>", opts) -- Open netrw on the left
+keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts) -- Open netrw on the left
 keymap("i", "kj", "<ESC>", opts) -- Get back to normal mode
 keymap("v", "p", '"_dP', opts) -- Persist old paste content
 
