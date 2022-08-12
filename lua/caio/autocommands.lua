@@ -24,7 +24,15 @@ autocmd("FileType", {
 
 -- Trim whitespaces
 autocmd("BufWritePre", {
-    group = custom_fn_group,
-    pattern = "*",
-    command = "%s/\\s\\+$//e",
+  group = custom_fn_group,
+  pattern = "*",
+  command = "%s/\\s\\+$//e",
+})
+
+autocmd("BufWritePre", {
+  group = custom_fn_group,
+  pattern = "*",
+  callback = function()
+    vim.lsp.buf.formatting_sync()
+  end,
 })
