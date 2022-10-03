@@ -30,6 +30,7 @@ local options = {
 	splitbelow = true,
 	splitright = true,
 	-- updatetime = 300,
+	ls = 0,
 }
 
 for option, value in pairs(options) do
