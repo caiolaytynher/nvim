@@ -1,6 +1,6 @@
-require "caio.options"
-require "caio.keymaps"
-require "caio.plugins"
-require "caio.colorscheme"
-require "caio.autocommands"
-require "caio.lsp"
+require("caio.options")
+require("caio.keymaps")
+require("caio.plugins")
+require("caio.colorscheme")
+require("caio.autocommands")
+require("caio.lsp")
