@@ -12,4 +12,5 @@ configs.setup({
     enable = true,
   },
   indent = { enable = true, disable = { "python", "css" } },
+  additional_vim_regex_highlighting = false,
 })
