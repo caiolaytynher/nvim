@@ -6,8 +6,7 @@ local fn = vim.fn
 -- Automatically install packer
 local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
-  PACKER_BOOTSTRAP = fn.system({
-    "git",
+  PACKER_BOOTSTRAP = fn.system({ "git",
     "clone",
     "--depth",
     "1",
@@ -43,41 +42,40 @@ packer.init({
 })
 
 return packer.startup(function(use)
-
-  use "wbthomason/packer.nvim" -- Have packer manage itself
-  use "nvim-lua/plenary.nvim" -- Useful lua functions used by lots of plugins
-  use "hoob3rt/lualine.nvim"
-  use "nvim-telescope/telescope.nvim"
-  use "windwp/nvim-autopairs"
-  use "numToStr/Comment.nvim"
-  use "lewis6991/gitsigns.nvim"
-  use "kyazdani42/nvim-web-devicons"
-  use "kyazdani42/nvim-tree.lua"
+  use("wbthomason/packer.nvim") -- Have packer manage itself
+  use("nvim-lua/plenary.nvim") -- Useful lua functions used by lots of plugins
+  use("hoob3rt/lualine.nvim")
+  use("nvim-telescope/telescope.nvim")
+  use("windwp/nvim-autopairs")
+  use("numToStr/Comment.nvim")
+  use("lewis6991/gitsigns.nvim")
+  use("kyazdani42/nvim-web-devicons")
+  use("kyazdani42/nvim-tree.lua")
 
   -- Completions
-  use "hrsh7th/nvim-cmp"
-  use "hrsh7th/cmp-buffer"
-  use "hrsh7th/cmp-path"
-  use "hrsh7th/cmp-nvim-lsp"
-  use "hrsh7th/cmp-nvim-lua"
-  use "saadparwaiz1/cmp_luasnip"
-  use "L3MON4D3/LuaSnip"
+  use("hrsh7th/nvim-cmp")
+  use("hrsh7th/cmp-buffer")
+  use("hrsh7th/cmp-path")
+  use("hrsh7th/cmp-nvim-lsp")
+  use("hrsh7th/cmp-nvim-lua")
+  use("saadparwaiz1/cmp_luasnip")
+  use("L3MON4D3/LuaSnip")
 
   -- LSP
-  use "neovim/nvim-lspconfig"
-  use "williamboman/nvim-lsp-installer"
-  use { "jose-elias-alvarez/null-ls.nvim", commit = "ff40739e5be6581899b43385997e39eecdbf9465" }
+  use("neovim/nvim-lspconfig")
+  use("williamboman/nvim-lsp-installer")
+  use({ "jose-elias-alvarez/null-ls.nvim" })
 
   -- Treesitter
-  use "nvim-treesitter/nvim-treesitter"
+  use("nvim-treesitter/nvim-treesitter")
 
   -- Color schemes
-  use 'morhetz/gruvbox'
-  use { 'dracula/vim', as = 'dracula' }
+  use("morhetz/gruvbox")
+  use({ "dracula/vim", as = "dracula" })
+  use('olivercederborg/poimandres.nvim')
 
   -- Automatically set up your configuration after cloning packer.nvim
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
-
 end)
