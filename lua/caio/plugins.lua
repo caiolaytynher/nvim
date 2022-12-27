@@ -19,13 +19,13 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
--- TODO: rewrite this in lua
-vim.cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
-  augroup end
-]])
+vim.api.nvim_create_autocmd("BufWritePost", {
+	group = vim.api.nvim_create_augroup("PackerUserConfig", { clear = true }),
+	pattern = "plugins.lua",
+	callback = function()
+		vim.cmd([[source <afile> | PackerSync]]) -- TODO: rewrite this in lua
+	end,
+})
 
 -- Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, "packer")
@@ -52,6 +52,7 @@ return packer.startup(function(use)
 	use("lewis6991/gitsigns.nvim")
 	use("kyazdani42/nvim-web-devicons")
 	use("kyazdani42/nvim-tree.lua")
+	use("p00f/nvim-ts-rainbow") -- bracket pair colorizer
 
 	-- Completions
 	use("hrsh7th/nvim-cmp")
@@ -71,11 +72,15 @@ return packer.startup(function(use)
 	use({ "nvim-treesitter/nvim-treesitter", run = "<cmd>TSUpdate" })
 
 	-- Color schemes
-	use("morhetz/gruvbox")
+	use("gruvbox-community/gruvbox")
 	use({ "dracula/vim", as = "dracula" })
-	use("olivercederborg/poimandres.nvim")
-	use({ "catppuccin/nvim", as = "catppuccin" })
-	use("lunarvim/darkplus.nvim")
+	use("lunarvim/darkplus.nvim") -- TODO
+	use("folke/tokyonight.nvim") -- TODO
+	use({ "catppuccin/nvim", as = "catppuccin" }) -- TODO
+	use("savq/melange") -- TODO: give it a chance
+	use("navarasu/onedark.nvim") -- TODO
+	use("sainnhe/everforest") -- TODO
+	use("rebelot/kanagawa.nvim") -- TODO
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	if PACKER_BOOTSTRAP then
