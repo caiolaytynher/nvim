@@ -75,12 +75,12 @@ return packer.startup(function(use)
 	use("gruvbox-community/gruvbox")
 	use({ "dracula/vim", as = "dracula" })
 	use("lunarvim/darkplus.nvim") -- TODO
-	use("folke/tokyonight.nvim") -- TODO
-	use({ "catppuccin/nvim", as = "catppuccin" }) -- TODO
+	use("folke/tokyonight.nvim")
+	use({ "catppuccin/nvim", as = "catppuccin" })
 	use("savq/melange") -- TODO: give it a chance
-	use("navarasu/onedark.nvim") -- TODO
-	use("sainnhe/everforest") -- TODO
-	use("rebelot/kanagawa.nvim") -- TODO
+	use("navarasu/onedark.nvim")
+	use("sainnhe/everforest")
+	use("rebelot/kanagawa.nvim")
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	if PACKER_BOOTSTRAP then
