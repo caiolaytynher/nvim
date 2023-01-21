@@ -1,13 +1,13 @@
-local colorscheme = "dracula"
+local colorscheme = "tokyonight"
 
 vim.opt.termguicolors = true -- TODO: find a way to check if exists
 vim.opt.background = "dark"
 
 -- Check if colorscheme exists
-local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
+local status_ok, _ = pcall(vim.cmd.colorscheme, colorscheme)
 
 if not status_ok then
-	vim.cmd([[colorscheme default]])
+	vim.cmd.colorscheme("default")
 	return
 end
 
